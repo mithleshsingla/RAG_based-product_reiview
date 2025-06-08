@@ -25,9 +25,8 @@ def chat():
       result = chain.invoke(
          {"input": input},
     config={
-        "configurable": {"session_id": "dhruv"}
-    },
-)["answer"]
+        "configurable": {"session_id": "Mithlesh"}
+    }, )["answer"]
 
       return str(result)
 

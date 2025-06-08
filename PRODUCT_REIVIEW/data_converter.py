@@ -17,8 +17,9 @@ def dataconverter():
             "review": row["review"]
         }
 
-    ## Append the object to the product list
-    product_list.append(object)
+        ## Append the object to the product list
+        product_list.append(object)
+        
     docs = []
     for entry in product_list:
         metadata = {"product_name": entry['product_name']}
