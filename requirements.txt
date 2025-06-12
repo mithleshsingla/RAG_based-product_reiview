@@ -7,6 +7,6 @@ pypdf
 python-dotenv
 pandas
 flask
+
 langchain_ollama
 sentence-transformers
-
