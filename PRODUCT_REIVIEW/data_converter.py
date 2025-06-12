@@ -5,6 +5,7 @@ def dataconverter():
 
     product_data = pd.read_csv(r"D:\mtech\product_reivew\data\flipkart_product_review.csv")
 
+
     data = product_data[["product_title", "review"]]
 
     product_list = []
