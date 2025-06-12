@@ -10,4 +10,3 @@ flask
 langchain_ollama
 sentence-transformers
 
--e .
