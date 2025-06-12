@@ -7,7 +7,6 @@ def dataconverter():
 
     data = product_data[["product_title", "review"]]
 
-
     product_list = []
 
     ## Itrate over the rows of the DataFrame
