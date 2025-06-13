@@ -5,7 +5,6 @@ from PRODUCT_REIVIEW.data_converter import dataconverter
 from dotenv import load_dotenv
 load_dotenv(dotenv_path="D:\mtech\product_reivew\.env")
 
-
 GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 ASTRA_DB_API_ENDPOINT=os.getenv("ASTRA_DB_API_ENDPOINT")
 ASTRA_DB_APPLICATION_TOKEN=os.getenv("ASTRA_DB_APPLICATION_TOKEN")
