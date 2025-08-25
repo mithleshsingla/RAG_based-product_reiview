@@ -1,5 +1,5 @@
 This is a product recommendation system based on RAG artitecture.
-
+```
 ┌────────────┐
 │ User Input │ ◄─── ("what about battery life?")
 └─────┬──────┘
@@ -53,3 +53,4 @@ This is a product recommendation system based on RAG artitecture.
 Stores user input, context, and model response
 for session ID "mithlesh"
 ────────────────────────────────────────────────────
+```
