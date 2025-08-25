@@ -2,7 +2,6 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever
-from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
@@ -12,13 +11,8 @@ from PRODUCT_REIVIEW.data_ingestion import data_ingestion
 
 from langchain_ollama import OllamaLLM
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
-
-#os.environ["GROQ_API_KEY"]= os.getenv("GROQ_API_KEY")
-
-#model = ChatGroq(model="llama-3.1-70b-versatile", temperature=0.5)
 
 
 model=OllamaLLM(model="qwen2.5:0.5b")
@@ -48,6 +42,8 @@ def generation(vstore):
     ]
 )
     history_aware_retriever = create_history_aware_retriever(model, retriever, contextualize_q_prompt)
+
+    
     PRODUCT_BOT_TEMPLATE = """
     Your ecommercebot bot is an expert in product recommendations and customer queries.
     It analyzes product titles and reviews to provide accurate and helpful responses.
@@ -90,13 +86,13 @@ if __name__ == "__main__":
     {"input": "can you tell me the best bluetooth buds?"},
     config={
         "configurable": {"session_id": "mithlesh"}
-    },  # constructs a key "abc123" in `store`.
+    },  
 )["answer"]
    print(answer)
    answer1= conversational_rag_chain.invoke(
     {"input": "what is my previous question?"},
     config={
         "configurable": {"session_id": "mithlesh"}
-    },  # constructs a key "abc123" in `store`.
+    },  
 )["answer"]
    print(answer1)

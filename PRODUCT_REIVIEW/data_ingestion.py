@@ -12,14 +12,6 @@ ASTRA_DB_KEYSPACE=os.getenv("ASTRA_DB_KEYSPACE")
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 
-GROQ_API_KEY=os.getenv("GROQ_API_KEY")
-ASTRA_DB_API_ENDPOINT=os.getenv("ASTRA_DB_API_ENDPOINT")
-ASTRA_DB_APPLICATION_TOKEN=os.getenv("ASTRA_DB_APPLICATION_TOKEN")
-ASTRA_DB_KEYSPACE=os.getenv("ASTRA_DB_KEYSPACE")
-HF_TOKEN = os.getenv("HF_TOKEN")
-
-#embedding = HuggingFaceInferenceAPIEmbeddings(api_key= HF_TOKEN, model_name="sentence-transformers/all-MiniLM-L6-v2")
-
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -42,7 +34,7 @@ def data_ingestion(status):
         insert_ids = vstore.add_documents(docs)
     
     else:
-        return vstore
+        return vstore,[]
     return vstore, insert_ids
 
 if __name__ == "__main__":
