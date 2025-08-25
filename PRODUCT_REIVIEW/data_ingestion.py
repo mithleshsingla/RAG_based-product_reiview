@@ -1,5 +1,4 @@
 from langchain_astradb import AstraDBVectorStore
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
 import os
 from PRODUCT_REIVIEW.data_converter import dataconverter
 from dotenv import load_dotenv
@@ -11,11 +10,8 @@ ASTRA_DB_APPLICATION_TOKEN=os.getenv("ASTRA_DB_APPLICATION_TOKEN")
 ASTRA_DB_KEYSPACE=os.getenv("ASTRA_DB_KEYSPACE")
 HF_TOKEN = os.getenv("HF_TOKEN")
 
-
 from langchain_community.embeddings import HuggingFaceEmbeddings
-
 embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-
 
 def data_ingestion(status):
 
